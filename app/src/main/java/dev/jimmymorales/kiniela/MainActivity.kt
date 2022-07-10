@@ -13,31 +13,31 @@ import androidx.compose.ui.tooling.preview.Preview
 import dev.jimmymorales.kiniela.ui.theme.KinielaTheme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            KinielaTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContent {
+			KinielaTheme {
+				// A surface container using the 'background' color from the theme
+				Surface(
+					modifier = Modifier.fillMaxSize(),
+					color = MaterialTheme.colorScheme.background
+				) {
+					Greeting("Android")
+				}
+			}
+		}
+	}
 }
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+	Text(text = "Hello $name!")
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    KinielaTheme {
-        Greeting("Android")
-    }
+	KinielaTheme {
+		Greeting("Android")
+	}
 }
