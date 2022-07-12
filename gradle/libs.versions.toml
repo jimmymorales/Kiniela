@@ -7,3 +7,7 @@ compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", versio
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+[bundles]
+compose = ["compose-ui", "compose-ui-tooling-preview"]
+compose-tooling = ["compose-ui-test-manifest", "compose-ui-tooling"]
