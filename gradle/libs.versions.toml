@@ -1,5 +1,9 @@
 [versions]
 compose = "1.2.0-beta01"
+detekt = "1.21.0-RC2"
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 [libraries]
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
@@ -7,6 +11,8 @@ compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", versio
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt"}
 
 [bundles]
 compose = ["compose-ui", "compose-ui-tooling-preview"]

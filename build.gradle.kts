@@ -1,9 +1,12 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
 	id("com.android.application") version "7.4.0-alpha08" apply false
 	id("com.android.library") version "7.4.0-alpha08" apply false
 	kotlin("android") version "1.6.21" apply false
-	id("io.gitlab.arturbosch.detekt") version "1.21.0-RC2"
+	alias(libs.plugins.detekt)
 }
+
+val detektFormatting = libs.detekt.formatting
 
 subprojects {
 	apply {
@@ -15,6 +18,6 @@ subprojects {
 	}
 
 	dependencies {
-		detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0-RC2")
+		detektPlugins(detektFormatting)
 	}
 }
