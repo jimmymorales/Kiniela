@@ -4,6 +4,7 @@ plugins {
 	alias(libs.plugins.agp.library) apply false
 	alias(libs.plugins.kgp) apply false
 	alias(libs.plugins.detekt)
+	alias(libs.plugins.gradle.doctor)
 }
 
 val detektFormatting = libs.detekt.formatting
