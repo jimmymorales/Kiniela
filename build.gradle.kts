@@ -1,7 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-	id("com.android.application") version "7.4.0-alpha08" apply false
-	id("com.android.library") version "7.4.0-alpha08" apply false
+	alias(libs.plugins.agp.app) apply false
+	alias(libs.plugins.agp.library) apply false
 	alias(libs.plugins.kgp) apply false
 	alias(libs.plugins.detekt)
 }
