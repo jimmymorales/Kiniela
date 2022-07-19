@@ -6,13 +6,15 @@ plugins {
 }
 
 android {
-	namespace = "dev.jimmymorales.kiniela"
-	compileSdk = 33
+	val appId = "dev.jimmymorales.kiniela"
+	namespace = appId
+	compileSdk = libs.versions.sdk.compile.get().toInt()
 
 	defaultConfig {
-		applicationId = "dev.jimmymorales.kiniela"
-		minSdk = 24
-		targetSdk = 33
+		minSdk = libs.versions.sdk.min.get().toInt()
+		targetSdk = libs.versions.sdk.target.get().toInt()
+
+		applicationId = appId
 		versionCode = 1
 		versionName = "1.0"
 

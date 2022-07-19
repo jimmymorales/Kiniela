@@ -12,6 +12,9 @@ junit = "4.13.2"
 kgp = "1.7.0"
 lifecycle = "2.6.0-alpha01"
 material3 = "1.0.0-alpha14"
+sdk_compile = "33"
+sdk_min = "24"
+sdk_target = "33"
 
 [plugins]
 agp_app = { id = "com.android.application", version.ref = "agp" }
