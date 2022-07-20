@@ -1,16 +1,20 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
 	id("com.android.application")
 	kotlin("android")
 }
 
 android {
-	namespace = "dev.jimmymorales.kiniela"
-	compileSdk = 32
+	val appId = "dev.jimmymorales.kiniela"
+	namespace = appId
+	compileSdk = libs.versions.sdk.compile.get().toInt()
 
 	defaultConfig {
-		applicationId = "dev.jimmymorales.kiniela"
-		minSdk = 24
-		targetSdk = 32
+		minSdk = libs.versions.sdk.min.get().toInt()
+		targetSdk = libs.versions.sdk.target.get().toInt()
+
+		applicationId = appId
 		versionCode = 1
 		versionName = "1.0"
 
@@ -27,22 +31,27 @@ android {
 		}
 	}
 	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility = JavaVersion.VERSION_11
+		targetCompatibility = JavaVersion.VERSION_11
 	}
 	kotlinOptions {
-		jvmTarget = "1.8"
+		jvmTarget = JavaVersion.VERSION_11.toString()
+		allWarningsAsErrors = true
 	}
 	buildFeatures {
 		compose = true
 	}
 	composeOptions {
-		kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+		kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
 	}
 	packagingOptions {
 		resources {
 			excludes += "/META-INF/{AL2.0,LGPL2.1}"
 		}
+	}
+	lint {
+		warningsAsErrors = true
+		abortOnError = true
 	}
 }
 
